@@ -13,18 +13,18 @@
     "" : {
       "get" : {
         "tags" : [ "abc" ],
-        "summary" : "abc",
-        "description" : "abc",
+        "summary" : "This is a Summary",
+        "description" : "This is a description",
         "parameters" : [ {
           "name" : "filter",
           "in" : "query",
-          "description" : "abc id",
+          "description" : "This is a description",
           "required" : true,
           "type" : "string"
         }],
         "responses" : {
           "200" : {
-            "description" : "An array of price estimates by product",
+            "description" : "This is a description",
             "schema" : {
               "type" : "object",
               "items" : {
@@ -59,7 +59,7 @@
     "EventResult" : {
       "properties" : {
         "content": {
-          "type": "object",
+          "type": "array",
           "items": {
             "$ref": "#/definitions/EventContent"
           }
@@ -104,7 +104,7 @@
         },
         "eventSubType": {
           "type": "string",
-          "enum": ["copilot-assigned"]
+          "enum": ["copilot-assigned", "created", "submitted", "quote-created"]
         },
         "sourceObjectContent": {
           "type": "string",
