@@ -104,7 +104,7 @@
         },
         "eventSubType": {
           "type": "string",
-          "enum": ["copilot-assigned", "created", "submitted", "quote-created", "email-verified", "payment-accepted", "challenge-feedback-provided", "challenge-submission", "challenge-member-registered", "challenge-finalists-selected", "state-change"]
+          "enum": ["copilot-assigned", "created", "submitted", "quote-created", "email-verified", "payment-accepted", "challenge-feedback-provided", "challenge-submission", "challenge-member-registered", "challenge-finalists-selected", "state-change", "launched", "checkpoint1", "finalists", "final-design", "winner", "final-feedback", "completed"]
         },
         "sourceObjectContent": {
           "type": "string",
