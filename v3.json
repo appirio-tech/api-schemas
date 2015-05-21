@@ -107,8 +107,10 @@
           "enum": ["copilot-assigned", "created", "submitted", "quote-created", "email-verified", "payment-accepted", "challenge-feedback-provided", "challenge-submission", "challenge-member-registered", "challenge-finalists-selected", "state-change", "launched", "checkpoint1", "finalists", "final-design", "winner", "final-feedback", "completed"]
         },
         "sourceObjectContent": {
-          "type": "string",
-          "sample": "{\"version\":14,\"id\":\"1427467795351:af449f69-e4ed-4325-a184-c9be1da5dd46\",\"modifiedBy\":\"40097202\",\"modifiedAt\":1430859249850,\"createdBy\":\"40097202\",\"createdAt\":1427467795351,\"name\":\"name used for test\",\"summary\":\"testing of the summary\",\"requestType\":\"Design&Code\",\"ownerId\":\"40097202\",\"competitorApps\":[\"comp 0\",\"comp 1\",\"comp 3\",\"comp 4\"],\"usageDescription\":\"usage - updated now\",\"features\":[{\"name\":\"feature1.0\",\"description\":\"desc1\"},{\"name\":\"feature2\",\"description\":\"desc2.0\"}],\"costEstimate\":{\"low\":\"3600\",\"high\":\"4400\"},\"status\":\"submitted\",\"statusNotes\":null,\"copilotId\":\"co-pilot\",\"quotedAmount\":null}"
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/SourceObjectContent"
+          }
         },
         "userId": {
           "type": "string"
@@ -119,7 +121,35 @@
       }
     },
     "SourceObjectContent" : {
-
+      "properties" : {
+        "copilotId": {
+          "type": "string"
+        },
+        "challengeId": {
+          "type": "string"
+        },
+        "submissionId": {
+          "type": "string"
+        },
+        "submissionType": {
+          "type": "string",
+          "enum": ["final", "checkpoint"]
+        },
+        "handle": {
+          "type": "string"
+        },
+        "submissionDate": {
+          "type": "string",
+          "sample": "2015-05-05T20:53:41.467Z"
+        },
+        "submissionStatus": {
+          "type": "string"
+        },
+        "registrationDate": {
+          "type": "string",
+          "sample": "2015-05-05T20:53:41.467Z"
+        }
+      }
     },
     "Error" : {
       "properties" : {
