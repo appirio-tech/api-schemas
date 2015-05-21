@@ -1,0 +1,13 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Move your app forward with the Uber API",
+    "version" : "1.0.0",
+    "title" : "Uber API"
+  },
+  "host" : "api.topcoder-dev.com",
+  "basePath" : "/v2",
+  "schemes" : [ "https" ],
+  "produces" : [ "application/json" ],
+  "paths" : {}
+}
