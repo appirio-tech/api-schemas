@@ -1,9 +1,9 @@
 {
-  "name": "work-api-schema",
+  "name": "api-schemas",
   "version": "0.0.1",
-  "homepage": "https://github.com/appirio-tech/work-api-schema",
-  "description": "Work API Schema",
-  "main": "work-api-schema.json",
+  "homepage": "https://github.com/appirio-tech/api-schemas",
+  "description": "API Schemas",
+  "main": "v3.json",
   "moduleType": [
     "globals"
   ]
