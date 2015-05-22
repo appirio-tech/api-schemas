@@ -136,7 +136,8 @@
           "enum": ["final", "checkpoint"]
         },
         "handle": {
-          "type": "string"
+          "type": "string",
+          "sample": "Batman9000"
         },
         "submissionDate": {
           "type": "string",
