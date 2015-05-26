@@ -1,9 +1,9 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "description" : "Move your app forward with the Uber API",
-    "version" : "1.0.0",
-    "title" : "Uber API"
+    "description" : "",
+    "version" : "",
+    "title" : ""
   },
   "host" : "api.topcoder-dev.com",
   "basePath" : "/v3/events",
@@ -12,19 +12,8 @@
   "paths" : {
     "" : {
       "get" : {
-        "tags" : [ "abc" ],
-        "summary" : "This is a Summary",
-        "description" : "This is a description",
-        "parameters" : [ {
-          "name" : "filter",
-          "in" : "query",
-          "description" : "This is a description",
-          "required" : true,
-          "type" : "string"
-        }],
         "responses" : {
           "200" : {
-            "description" : "This is a description",
             "schema" : {
               "type" : "object",
               "items" : {

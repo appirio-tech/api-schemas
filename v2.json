@@ -1,23 +1,18 @@
 {
   "swagger" : "2.0",
-  "info" : {
-    "description" : "Move your app forward with the Uber API",
-    "version" : "1.0.0",
-    "title" : "Uber API"
-  },
-  "host" : "api.topcoder-dev.com",
-  "basePath" : "/v2",
+  "host" : "topcoder-dev.auth0.com",
+  "basePath" : "/oauth",
   "schemes" : [ "https" ],
   "produces" : [ "application/json" ],
   "paths" : {
-    "/users/{handle}": {
-      "get" : {
+    "/ro": {
+      "post" : {
         "responses" : {
           "200" : {
             "schema" : {
               "type" : "object",
               "items" : {
-                "$ref" : "#/definitions/User"
+                "$ref" : "#/definitions/Token"
               }
             }
           },
@@ -32,27 +27,20 @@
     }
   },
   "definitions" : {
-    "User" : {
+    "Token" : {
       "properties" : {
-        "handle": {
-          "type": "string",
-          "sample": "CardioBoy"
+        "refresh_token": {
+          "type": "string"
         },
-        "country": {
-          "type": "string",
-          "sample": "Idonesia"
+        "id_token": {
+          "type": "string"
         },
-        "memberSince": {
-          "type": "string",
-          "sample": "2008-10-15T05:08:00.000-0400"
+        "access_token": {
+          "type": "string"
         },
-        "quote": {
+        "token_type": {
           "type": "string",
-          "sample": "Don't forget your roots."
-        },
-        "photoLink": {
-          "type": "string",
-          "sample": "/i/m/cardiboy_big.jpg"
+          "sample": "bearer"
         }
       }
     }
