@@ -118,7 +118,8 @@
           "type": "string"
         },
         "submissionId": {
-          "type": "string"
+          "type": "string",
+          "sample": "200703"
         },
         "submissionType": {
           "type": "string",
