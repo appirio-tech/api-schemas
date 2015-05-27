@@ -74,7 +74,7 @@
         "target": {
           "type": "string",
           "sample": "1"
-        },
+        }
       }
     },
     "Error" : {
