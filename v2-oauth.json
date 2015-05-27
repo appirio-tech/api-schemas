@@ -1,0 +1,48 @@
+{
+  "swagger" : "2.0",
+  "host" : "topcoder-dev.auth0.com",
+  "basePath" : "/oauth",
+  "schemes" : [ "https" ],
+  "produces" : [ "application/json" ],
+  "paths" : {
+    "/ro": {
+      "post" : {
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "type" : "object",
+              "items" : {
+                "$ref" : "#/definitions/Token"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Token" : {
+      "properties" : {
+        "refresh_token": {
+          "type": "string"
+        },
+        "id_token": {
+          "type": "string"
+        },
+        "access_token": {
+          "type": "string"
+        },
+        "token_type": {
+          "type": "string",
+          "sample": "bearer"
+        }
+      }
+    }
+  }
+}
