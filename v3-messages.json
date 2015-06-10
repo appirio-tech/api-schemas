@@ -85,7 +85,29 @@
         "updatedBy": {
           "type": "string"
         },
-        "read": {
+        "context": {
+          "type": "string"
+        },
+        "attachments": {
+          "type": "array:",
+          "items": {
+            "$ref": "#/definitions/Attachment"
+          }
+        }
+      }
+    },
+    "Attachment": {
+      "properties": {
+        "attachmentId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "thumbUrl": {
+          "type": "string"
+        },
+        "originalUrl": {
           "type": "string"
         }
       }
