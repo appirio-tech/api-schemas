@@ -1,0 +1,140 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "",
+    "version" : "",
+    "title" : ""
+  },
+  "host" : "api.topcoder-dev.com",
+  "basePath" : "/v3/threads",
+  "schemes" : [ "https" ],
+  "produces" : [ "application/json" ],
+  "paths" : {
+    "" : {
+      "get" : {
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "type" : "object",
+              "items" : {
+                "$ref" : "#/definitions/ThreadWrapper"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "ThreadWrapper" : {
+      "properties" : {
+        "id": {
+          "type": "string"
+        },
+        "result": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/ThreadResult"
+          }
+        }
+      }
+    },
+    "ThreadResult" : {
+      "properties" : {
+        "success": {
+          "type": "boolean",
+          "sample": true
+        },
+        "status": {
+          "type": "integer",
+          "sample": 200
+        },
+        "content": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/ThreadContent"
+          }
+        }
+      }
+    },
+    "ThreadContent" : {
+      "properties" : {
+        "totalUnreadCount": {
+          "type": "number"
+        },
+        "threads": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Thread"
+          }
+        }
+      }
+    },
+    "Thread" : {
+      "properties" : {
+        "thread_id": {
+          "type": "string"
+        },
+        "unreadCount": {
+          "type": "number"
+        },
+        "subject": {
+          "type": "string",
+          "sample": "NASA - DTN Dashboard winner"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message" : {
+      "properties" : {
+        "workId": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string",
+          "sample": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        "createdAt": {
+          "type": "string",
+          "sample": "2015-05-05T20:53:41.467Z"
+        },
+        "createdBy": {
+          "type": "string",
+          "sample": "Batman"
+        },
+        "updatedAt": {
+          "type": "string",
+          "sample": "2015-05-05T20:53:41.467Z"
+        },
+        "updatedBy": {
+          "type": "string"
+        }
+      }
+    },
+    "Error" : {
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "thread" : {
+          "type" : "string"
+        },
+        "fields" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
