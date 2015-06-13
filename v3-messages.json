@@ -69,21 +69,24 @@
           "type": "string"
         },
         "body": {
-          "type": "string"
+          "type": "string",
+          "sample": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         },
         "createdAt": {
           "type": "string",
           "sample": "2015-05-05T20:53:41.467Z"
         },
         "createdBy": {
-          "type": "string"
+          "type": "string",
+          "sample": "Batman"
         },
         "updatedAt": {
           "type": "string",
           "sample": "2015-05-05T20:53:41.467Z"
         },
         "updatedBy": {
-          "type": "string"
+          "type": "string",
+          "sample": "Batman"
         },
         "context": {
           "type": "string"
