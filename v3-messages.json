@@ -27,7 +27,25 @@
               "$ref" : "#/definitions/Error"
             }
           }
+        },
+        "post" : {
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "type" : "object",
+              "items" : {
+                "$ref" : "#/definitions/Message"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
         }
+      }
       }
     }
   },
