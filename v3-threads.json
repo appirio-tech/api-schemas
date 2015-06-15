@@ -6,7 +6,7 @@
     "title" : ""
   },
   "host" : "api.topcoder-dev.com",
-  "basePath" : "/v3/messages",
+  "basePath" : "/v3/threads",
   "schemes" : [ "https" ],
   "produces" : [ "application/json" ],
   "paths" : {
@@ -17,24 +17,7 @@
             "schema" : {
               "type" : "object",
               "items" : {
-                "$ref" : "#/definitions/Message"
-              }
-            }
-          },
-          "default" : {
-            "description" : "Unexpected error",
-            "schema" : {
-              "$ref" : "#/definitions/Error"
-            }
-          }
-        },
-        "post" : {
-        "responses" : {
-          "200" : {
-            "schema" : {
-              "type" : "object",
-              "items" : {
-                "$ref" : "#/definitions/Message"
+                "$ref" : "#/definitions/ThreadWrapper"
               }
             }
           },
@@ -46,11 +29,10 @@
           }
         }
       }
-      }
     }
   },
   "definitions" : {
-    "Message" : {
+    "ThreadWrapper" : {
       "properties" : {
         "id": {
           "type": "string"
@@ -58,12 +40,12 @@
         "result": {
           "type": "object",
           "items": {
-            "$ref": "#/definitions/MessageResult"
+            "$ref": "#/definitions/ThreadResult"
           }
         }
       }
     },
-    "MessageResult" : {
+    "ThreadResult" : {
       "properties" : {
         "success": {
           "type": "boolean",
@@ -74,14 +56,47 @@
           "sample": 200
         },
         "content": {
-          "type": "array",
+          "type": "object",
           "items": {
-            "$ref": "#/definitions/MessageContent"
+            "$ref": "#/definitions/ThreadContent"
           }
         }
       }
     },
-    "MessageContent" : {
+    "ThreadContent" : {
+      "properties" : {
+        "totalUnreadCount": {
+          "type": "number"
+        },
+        "threads": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Thread"
+          }
+        }
+      }
+    },
+    "Thread" : {
+      "properties" : {
+        "thread_id": {
+          "type": "string"
+        },
+        "unreadCount": {
+          "type": "number"
+        },
+        "subject": {
+          "type": "string",
+          "sample": "NASA - DTN Dashboard winner"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message" : {
       "properties" : {
         "workId": {
           "type": "string"
@@ -103,32 +118,6 @@
           "sample": "2015-05-05T20:53:41.467Z"
         },
         "updatedBy": {
-          "type": "string",
-          "sample": "Batman"
-        },
-        "context": {
-          "type": "string"
-        },
-        "attachments": {
-          "type": "array:",
-          "items": {
-            "$ref": "#/definitions/Attachment"
-          }
-        }
-      }
-    },
-    "Attachment": {
-      "properties": {
-        "attachmentId": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "thumbUrl": {
-          "type": "string"
-        },
-        "originalUrl": {
           "type": "string"
         }
       }
@@ -139,7 +128,7 @@
           "type" : "integer",
           "format" : "int32"
         },
-        "message" : {
+        "thread" : {
           "type" : "string"
         },
         "fields" : {
