@@ -55,7 +55,7 @@
             "schema" : {
               "type" : "object",
               "items" : {
-                "$ref" : "#/definitions/ThreadWrapper"
+                "$ref" : "#/definitions/ThreadShowWrapper"
               }
             }
           },
@@ -103,22 +103,6 @@
     },
     "ThreadShowContent" : {
       "properties" : {
-        "totalUnreadCount": {
-          "type": "number"
-        },
-        "messages": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Message"
-          }
-        }
-      }
-    },
-    "ThreadShow" : {
-      "properties" : {
-        "thread_id": {
-          "type": "string"
-        },
         "unreadCount": {
           "type": "number"
         },
@@ -205,7 +189,7 @@
     },
     "ThreadContent" : {
       "properties" : {
-        "totalUnreadCount": {
+        "unreadCount": {
           "type": "number"
         },
         "threads": {
@@ -218,7 +202,7 @@
     },
     "Thread" : {
       "properties" : {
-        "thread_id": {
+        "id": {
           "type": "string"
         },
         "unreadCount": {
@@ -258,9 +242,6 @@
         },
         "read": {
           "type": "boolean"
-        },
-        "context": {
-          "type": "string"
         },
         "attachments": {
           "type": "array:",
