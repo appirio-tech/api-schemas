@@ -65,7 +65,10 @@
     },
     "MessageContent" : {
       "properties" : {
-        "workId": {
+        "id": {
+          "type": "string"
+        },
+        "threadId": {
           "type": "string"
         },
         "body": {
@@ -76,17 +79,12 @@
           "type": "string",
           "sample": "2015-05-05T20:53:41.467Z"
         },
-        "createdBy": {
+        "publisherId": {
           "type": "string",
           "sample": "Batman"
         },
-        "updatedAt": {
-          "type": "string",
-          "sample": "2015-05-05T20:53:41.467Z"
-        },
-        "updatedBy": {
-          "type": "string",
-          "sample": "Batman"
+        "read": {
+          "type": "boolean"
         },
         "context": {
           "type": "string"

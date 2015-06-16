@@ -28,10 +28,150 @@
             }
           }
         }
+      },
+      "post" : {
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "type" : "object",
+              "items" : {
+                "$ref" : "#/definitions/ThreadPost"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/{id}" : {
+      "get" : {
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "type" : "object",
+              "items" : {
+                "$ref" : "#/definitions/ThreadWrapper"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
       }
     }
   },
   "definitions" : {
+    "ThreadShowWrapper" : {
+      "properties" : {
+        "id": {
+          "type": "string"
+        },
+        "result": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/ThreadShowResult"
+          }
+        }
+      }
+    },
+    "ThreadShowResult" : {
+      "properties" : {
+        "success": {
+          "type": "boolean",
+          "sample": true
+        },
+        "status": {
+          "type": "integer",
+          "sample": 200
+        },
+        "content": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/ThreadShowContent"
+          }
+        }
+      }
+    },
+    "ThreadShowContent" : {
+      "properties" : {
+        "totalUnreadCount": {
+          "type": "number"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "ThreadShow" : {
+      "properties" : {
+        "thread_id": {
+          "type": "string"
+        },
+        "unreadCount": {
+          "type": "number"
+        },
+        "subject": {
+          "type": "string",
+          "sample": "NASA - DTN Dashboard winner"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "ThreadPostWrapper" : {
+      "properties" : {
+        "id": {
+          "type": "string"
+        },
+        "result": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/ThreadPostResult"
+          }
+        }
+      }
+    },
+    "ThreadPostResult" : {
+      "properties" : {
+        "success": {
+          "type": "boolean",
+          "sample": true
+        },
+        "status": {
+          "type": "integer",
+          "sample": 200
+        },
+        "content": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/ThreadContent"
+          }
+        }
+      }
+    },
+    "ThreadPostContent" : {
+      "properties" : {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
     "ThreadWrapper" : {
       "properties" : {
         "id": {
@@ -98,7 +238,10 @@
     },
     "Message" : {
       "properties" : {
-        "workId": {
+        "id": {
+          "type": "string"
+        },
+        "threadId": {
           "type": "string"
         },
         "body": {
@@ -109,16 +252,21 @@
           "type": "string",
           "sample": "2015-05-05T20:53:41.467Z"
         },
-        "createdBy": {
+        "publisherId": {
           "type": "string",
           "sample": "Batman"
         },
-        "updatedAt": {
-          "type": "string",
-          "sample": "2015-05-05T20:53:41.467Z"
+        "read": {
+          "type": "boolean"
         },
-        "updatedBy": {
+        "context": {
           "type": "string"
+        },
+        "attachments": {
+          "type": "array:",
+          "items": {
+            "$ref": "#/definitions/Attachment"
+          }
         }
       }
     },
