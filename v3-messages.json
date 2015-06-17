@@ -11,13 +11,33 @@
   "produces" : [ "application/json" ],
   "paths" : {
     "" : {
-      "get" : {
+      "post" : {
         "responses" : {
           "200" : {
             "schema" : {
               "type" : "object",
               "items" : {
-                "$ref" : "#/definitions/Message"
+                "$ref" : "#/definitions/MessagePost"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/{id}" : {
+      "put" : {
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "type" : "object",
+              "items" : {
+                "$ref" : "#/definitions/MessagePut"
               }
             }
           },
@@ -50,7 +70,7 @@
     }
   },
   "definitions" : {
-    "Message" : {
+    "MessagePut" : {
       "properties" : {
         "id": {
           "type": "string"
@@ -58,12 +78,40 @@
         "result": {
           "type": "object",
           "items": {
-            "$ref": "#/definitions/MessageResult"
+            "$ref": "#/definitions/MessagePutResult"
           }
         }
       }
     },
-    "MessageResult" : {
+    "MessagePutResult" : {
+      "properties" : {
+        "success": {
+          "type": "boolean",
+          "sample": true
+        },
+        "status": {
+          "type": "integer",
+          "sample": 200
+        },
+        "content": {
+          "type": "null"
+        }
+      }
+    },
+    "MessagePost" : {
+      "properties" : {
+        "id": {
+          "type": "string"
+        },
+        "result": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/MessagePostResult"
+          }
+        }
+      }
+    },
+    "MessagePostResult" : {
       "properties" : {
         "success": {
           "type": "boolean",
@@ -76,38 +124,22 @@
         "content": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/MessageContent"
+            "$ref": "#/definitions/MessagePostContent"
           }
         }
       }
     },
-    "MessageContent" : {
+    "MessagePostContent" : {
       "properties" : {
-        "workId": {
+        "threadId": {
+          "type": "string"
+        },
+        "publisherId": {
           "type": "string"
         },
         "body": {
           "type": "string",
           "sample": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        },
-        "createdAt": {
-          "type": "string",
-          "sample": "2015-05-05T20:53:41.467Z"
-        },
-        "createdBy": {
-          "type": "string",
-          "sample": "Batman"
-        },
-        "updatedAt": {
-          "type": "string",
-          "sample": "2015-05-05T20:53:41.467Z"
-        },
-        "updatedBy": {
-          "type": "string",
-          "sample": "Batman"
-        },
-        "context": {
-          "type": "string"
         },
         "attachments": {
           "type": "array:",
