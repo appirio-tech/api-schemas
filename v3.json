@@ -57,7 +57,45 @@
     },
     "EventContent" : {
       "properties" : {
-        "version": {
+        "id": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "sample": "2015-05-05T20:53:41.467Z"
+        },
+        "sourceObjectType": {
+          "type": "string",
+          "enum": ["app-work-requests"]
+        },
+        "sourceObjectId": {
+          "type": "string"
+        },
+        "eventSubType": {
+          "type": "string",
+          "enum": ["copilot-assigned", "created", "submitted", "quote-created", "email-verified", "payment-accepted", "challenge-feedback-provided", "challenge-submission", "challenge-member-registered", "challenge-finalists-selected", "state-change", "launched", "checkpoint1", "finalists", "final-design", "winner", "final-feedback", "completed"]
+        },
+        "eventType": {
+          "type": "string",
+          "enum": ["timeline"]
+        },
+        "sourceObjectContent": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/SourceObjectContent"
+          }
+        },
+        "fieldChanges": {
+          "type": "string"
+        }
+      }
+    },
+    "SourceObjectContent" : {
+      "properties" : {
+        "version" : {
           "type": "number"
         },
         "id": {
@@ -67,79 +105,107 @@
           "type": "string"
         },
         "modifiedAt": {
-          "type": "string",
-          "sample": "2015-05-05T20:53:41.467Z"
+          "type": "string"
         },
         "createdBy": {
           "type": "string"
         },
         "createdAt": {
-          "type": "string",
-          "sample": "2015-05-05T20:53:41.467Z"
+          "type": "number",
+          "sample": 1427467795351
+        },
+        "name": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "requestType": {
+          "type": "string"
         },
         "ownerId": {
           "type": "string"
         },
-        "sourceObjectType": {
-          "type": "string",
-          "enum": ["app-work-requests"]
+        "competitorApps": {
+          "type": "array",
+          "sample": [
+             "comp 0",
+             "comp 1",
+             "comp 2",
+             "comp 3"
+          ]
         },
-        "sourceObjectId": {
+        "usageDescription": {
           "type": "string"
         },
-        "eventType": {
-          "type": "string",
-          "enum": ["timeline"]
+        "features": {
+          "type": "array",
+          "sample": [
+            {
+              "name": feature 1",
+              "description": "description 1"
+            },
+            {
+              "name": feature 2",
+              "description": "description 2"
+            }
+          ]
         },
-        "eventSubType": {
-          "type": "string",
-          "enum": ["copilot-assigned", "created", "submitted", "quote-created", "email-verified", "payment-accepted", "challenge-feedback-provided", "challenge-submission", "challenge-member-registered", "challenge-finalists-selected", "state-change", "launched", "checkpoint1", "finalists", "final-design", "winner", "final-feedback", "completed"]
-        },
-        "sourceObjectContent": {
+        "costEstimate": {
           "type": "object",
-          "items": {
-            "$ref": "#/definitions/SourceObjectContent"
+          "sample": {
+            "low": "3600",
+            "high": "4400"
           }
+        },
+        "status": {
+          "type": "string"
+        },
+        "statusNotes": {
+          "type": "string"
+        },
+        "copilotId": {
+          "type": "string"
+        },
+        "quotedAmount": {
+          "type": "string"
+        },
+
+
+        "challengeId": {
+          "type": "string"
+        },
+        "tcDirectId": {
+          "type": "string"
+        },
+        "registrants": {
+          "type": "array",
+          "sample": [
+            {
+              "handle": "exampleHandle"
+            }
+          ]
+        },
+        "submissions": {
+          "type": "array",
+          "sample": [
+            {
+              "submissionId": "1234"
+            }
+          ]
+        },
+        "phase": {
+          "type": "string"
+        },
+        "phaseStatus": {
+          "type": "string"
         },
         "userId": {
           "type": "string"
         },
-        "fieldChanges": {
-          "type": "string"
-        }
-      }
-    },
-    "SourceObjectContent" : {
-      "properties" : {
-        "copilotId": {
+        "workRequestId": {
           "type": "string"
         },
-        "challengeId": {
-          "type": "string"
-        },
-        "submissionId": {
-          "type": "string",
-          "sample": "200703"
-        },
-        "submissionType": {
-          "type": "string",
-          "enum": ["final", "checkpoint"]
-        },
-        "handle": {
-          "type": "string",
-          "sample": "Batman9000"
-        },
-        "submissionDate": {
-          "type": "string",
-          "sample": "2015-05-05T20:53:41.467Z"
-        },
-        "submissionStatus": {
-          "type": "string"
-        },
-        "registrationDate": {
-          "type": "string",
-          "sample": "2015-05-05T20:53:41.467Z"
-        }
       }
     },
     "Error" : {
