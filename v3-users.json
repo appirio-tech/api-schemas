@@ -29,6 +29,26 @@
           }
         }
       }
+    },
+    "/{id}" : {
+      "get" : {
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "type" : "object",
+              "items" : {
+                "$ref" : "#/definitions/User"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
     }
   },
   "definitions" : {
@@ -74,9 +94,37 @@
         "handle": {
           "type": "string"
         },
-        "target": {
+        "credential": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/Credential"
+          }
+        }
+      }
+    },
+    "Credential" : {
+      "properties" : {
+        "id": {
+          "type": "string"
+        },
+        "modifiedBy": {
+          "type": "string"
+        },
+        "modifiedAt": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "activationCode": {
           "type": "string",
-          "sample": "1"
+          "sample": "13IOV95OEJQ"
+        },
+        "resetToken": {
+          "type": "null"
         }
       }
     },
