@@ -76,7 +76,7 @@
           "sample": 200
         },
         "content": {
-          "type": "array",
+          "type": "object",
           "items": {
             "$ref": "#/definitions/UserContent"
           }
