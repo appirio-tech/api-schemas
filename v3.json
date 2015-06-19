@@ -166,7 +166,7 @@
         },
         "copilotId": {
           "type": "string",
-          "sample": "batman2000"
+          "sample": "Batman9000"
         },
         "quotedAmount": {
           "type": "string"
