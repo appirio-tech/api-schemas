@@ -69,7 +69,7 @@
         },
         "sourceObjectType": {
           "type": "string",
-          "enum": ["app-work-requests"]
+          "enum": ["app-work-requests", "challengedata"]
         },
         "sourceObjectId": {
           "type": "string"
