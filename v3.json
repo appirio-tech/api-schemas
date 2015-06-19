@@ -205,7 +205,7 @@
         },
         "workRequestId": {
           "type": "string"
-        },
+        }
       }
     },
     "Error" : {
