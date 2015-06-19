@@ -76,7 +76,7 @@
         },
         "eventSubType": {
           "type": "string",
-          "enum": ["copilot-assigned", "created", "submitted", "quote-created", "email-verified", "payment-accepted", "challenge-feedback-provided", "challenge-submission", "challenge-member-registered", "challenge-finalists-selected", "state-change", "launched", "checkpoint1", "finalists", "final-design", "winner", "final-feedback", "completed"]
+          "enum": ["copilot-assigned", "created", "submitted", "quote-created", "email-verified", "payment-accepted", "challenge-feedback-provided", "Submission", "Registration", "challenge-finalists-selected", "state-change", "launched", "checkpoint1", "finalists", "final-design", "winner", "final-feedback", "completed"]
         },
         "eventType": {
           "type": "string",
@@ -165,7 +165,8 @@
           "type": "string"
         },
         "copilotId": {
-          "type": "string"
+          "type": "string",
+          "sample": "batman2000"
         },
         "quotedAmount": {
           "type": "string"
