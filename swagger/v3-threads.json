@@ -35,7 +35,7 @@
             "schema" : {
               "type" : "object",
               "items" : {
-                "$ref" : "#/definitions/ThreadPost"
+                "$ref" : "#/definitions/ThreadPostWrapper"
               }
             }
           },
@@ -144,7 +144,7 @@
         "content": {
           "type": "object",
           "items": {
-            "$ref": "#/definitions/ThreadContent"
+            "$ref": "#/definitions/ThreadPostContent"
           }
         }
       }
