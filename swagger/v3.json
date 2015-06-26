@@ -169,7 +169,8 @@
           "sample": "Batman9000"
         },
         "quotedAmount": {
-          "type": "number"
+          "type": "string",
+          "sample": "$2000"
         },
         "challengeId": {
           "type": "string"
