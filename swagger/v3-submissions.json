@@ -155,7 +155,7 @@
           "sample": "2015-05-05T20:53:41.467Z"
         },
         "files": {
-          "type": "object",
+          "type": "array",
           "items": {
             "$ref": "#/definitions/File"
           }
