@@ -30,7 +30,7 @@
         }
       }
     },
-    "/{id}/submissions/:submission_id" : {
+    "/{id}/submissions/{submission_id}" : {
       "get" : {
         "responses" : {
           "200" : {
