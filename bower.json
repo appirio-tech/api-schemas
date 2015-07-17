@@ -1,6 +1,6 @@
 {
   "name": "api-schemas",
-  "version": "0.0.1",
+  "version": "2.1.0",
   "homepage": "https://github.com/appirio-tech/api-schemas",
   "description": "API Schemas",
   "main": "v3.json",

@@ -1,0 +1,21 @@
+{
+  "name": "api-schemas",
+  "version": "2.1.0",
+  "description": "Mock data for topcoder apis",
+  "main": "update.js",
+  "scripts": {
+    "start": "node update.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/appirio-tech/api-schemas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/appirio-tech/api-schemas/issues"
+  },
+  "homepage": "https://github.com/appirio-tech/api-schemas",
+  "dependencies": {
+    "api-blueprint-to-json": "0.0.0"
+  }
+}
