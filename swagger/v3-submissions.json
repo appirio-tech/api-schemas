@@ -182,6 +182,10 @@
         "id": {
           "type": "string"
         },
+        "name": {
+          "type": "string",
+          "sample": "luke-i-m-your-father.jpg"
+        },
         "accepted": {
           "type": "boolean"
         },
