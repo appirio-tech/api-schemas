@@ -6,7 +6,7 @@
     "title" : ""
   },
   "host" : "api.topcoder-dev.com",
-  "basePath" : "/v3/project",
+  "basePath" : "/v3/projects",
   "schemes" : [ "https" ],
   "produces" : [ "application/json" ],
   "paths" : {
