@@ -1,0 +1,162 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "",
+    "version" : "",
+    "title" : ""
+  },
+  "host" : "api.topcoder-dev.com",
+  "basePath" : "/v3/work",
+  "schemes" : [ "https" ],
+  "produces" : [ "application/json" ],
+  "paths" : {
+    "" : {
+      "get" : {
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "type" : "object",
+              "items" : {
+                "$ref" : "#/definitions/WorkWrapper"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "WorkWrapper" : {
+      "properties" : {
+        "id": {
+          "type": "string"
+        },
+        "result": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/WorkResult"
+          }
+        }
+      }
+    },
+    "WorkResult" : {
+      "properties" : {
+        "success": {
+          "type": "boolean",
+          "sample": true
+        },
+        "status": {
+          "type": "integer",
+          "sample": 200
+        },
+        "content": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/WorkContent"
+          }
+        }
+      }
+    },
+    "WorkContent" : {
+      "properties" : {
+        "id": {
+          "type": "string"
+        },
+        "modifiedBy": {
+          "type": "string"
+        },
+        "modifiedAt": {
+          "type": "string",
+          "sample": "2015-05-05T20:53:41.467Z"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "sample": "2015-05-05T20:53:41.467Z"
+        },
+        "ownerId": {
+          "type": "string"
+        },
+        "version": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string",
+          "sample": "HR Internal App"
+        },
+        "parentId": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "requestType": {
+          "type": "string",
+          "enum": ["code", "both", "design"]
+        },
+        "competitorApps": {
+          "type": "array",
+          "sample": ["item 1", "item 2", "item 3"]
+        },
+        "usageDescription": {
+          "type": "string"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Feature"
+          }
+        },
+        "costEstimate": {
+          "type": "number"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Assigned", "Incomplete"]
+        },
+        "copilotId": {
+          "type": "string"
+        }
+      }
+    },
+    "Feature" : {
+      "properties" : {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "explanation": {
+          "type": "string"
+        },
+        "custom": {
+          "type": "boolean",
+          "enum": [true, false]
+        }
+      }
+    },
+    "Error" : {
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "message" : {
+          "type" : "string"
+        },
+        "fields" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
