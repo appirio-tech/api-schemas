@@ -56,7 +56,7 @@
           "sample": 200
         },
         "content": {
-          "type": "object",
+          "type": "array",
           "items": {
             "$ref": "#/definitions/WorkContent"
           }
@@ -120,7 +120,7 @@
         },
         "status": {
           "type": "string",
-          "enum": ["Assigned", "Incomplete"]
+          "enum": ["Assigned", "Incomplete", "Estimate", "Launched", "Messaged"]
         },
         "copilotId": {
           "type": "string"
