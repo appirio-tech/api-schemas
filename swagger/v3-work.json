@@ -120,7 +120,7 @@
         },
         "status": {
           "type": "string",
-          "enum": ["Assigned", "Incomplete", "Estimate", "Launched", "Messaged"]
+          "enum": ["Assigned", "Submitted", "Incomplete", "Estimate", "Launched", "Messaged"]
         },
         "copilotId": {
           "type": "string"
