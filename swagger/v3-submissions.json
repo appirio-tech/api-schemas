@@ -128,11 +128,21 @@
           "type": "string",
           "sample": "2015-05-05T20:53:41.467Z"
         },
-        "screeningSubmissions": {
+        "submissions": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/Submission"
           }
+        },
+        "phase": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/Phase"
+          }
+        },
+        "numberOfRanks": {
+          "type": "number",
+          "sample": 5
         }
       }
     },
@@ -146,6 +156,10 @@
           "items": {
             "$ref": "#/definitions/Submitter"
           }
+        },
+        "rank": {
+          "type": "number",
+          "sample": 0
         },
         "accepted": {
           "type": "boolean"
@@ -196,6 +210,46 @@
         "url": {
           "type": "string",
           "sample": "https://i.kinja-img.com/gawker-media/image/upload/raoq6i3zhiq78kigjuam.jpg"
+        }
+      }
+    },
+    "Phase" : {
+      "properties" : {
+        "numberOfPhases": {
+          "type": "number",
+          "sample": 3
+        },
+        "currentPhase": {
+          "type": "number",
+          "sample": 1
+        },
+        "current": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/CurrentPhase"
+          }
+        },
+        "next": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/NextPhase"
+          }
+        }
+      }
+    },
+    "CurrentPhase" : {
+      "properties" : {
+        "name": {
+          "type": "string",
+          "sample": "Design Concepts"
+        }
+      }
+    },
+    "NextPhase" : {
+      "properties" : {
+        "name": {
+          "type": "string",
+          "sample": "Final Designs"
         }
       }
     },
