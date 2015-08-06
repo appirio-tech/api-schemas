@@ -1,11 +1,11 @@
 {
   "swagger" : "2.0",
   "host" : "topcoder-dev.auth0.com",
-  "basePath" : "/oauth",
+  "basePath" : "",
   "schemes" : [ "https" ],
   "produces" : [ "application/json" ],
   "paths" : {
-    "/ro": {
+    "/oauth/ro": {
       "post" : {
         "responses" : {
           "200" : {
@@ -25,7 +25,7 @@
         }
       }
     },
-    "/tokeninfo": {
+    "/oauth/tokeninfo": {
       "post" : {
         "responses" : {
           "200" : {
@@ -44,9 +44,49 @@
           }
         }
       }
+    },
+    "/delegation": {
+      "post" : {
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "type" : "object",
+              "items" : {
+                "$ref" : "#/definitions/Delegation"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
     }
   },
   "definitions" : {
+    "Delegation" : {
+      "properties" : {
+        "expires_in": {
+          "type": "number",
+          "sample": 360000000
+        },
+        "id_token": {
+          "type": "string",
+          "sample": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI0ZWM0YThkMTJjOWM2MzQ2YzhiODRlMTliODYzNGQ1NSIsIm5hbWUiOiJKb2huQ3VzdG9tZXIiLCJuaWNrbmFtZSI6IkpvaG5DdXN0b21lciIsImdyb3VwcyI6W10sImRuIjoidWlkPTQwMTM2MDIxLG91PW1lbWJlcnMsZGM9dG9wY29kZXIsZGM9Y29tIiwiY2xpZW50SUQiOiJKRkRvN0hNa2YwcTJDa1ZGSG9qeTN6SFdhZnppcHJoVCIsInVwZGF0ZWRfYXQiOiIyMDE1LTA4LTA1VDIzOjI1OjI4LjI1NFoiLCJwaWN0dXJlIjoiaHR0cHM6Ly9zLmdyYXZhdGFyLmNvbS9hdmF0YXIvMjY3ZGYxODAxNGQ4ODRlYWZhYTU1YjY4OTU1OTBhMjk_cz00ODAmcj1wZyZkPWh0dHBzJTNBJTJGJTJGY2RuLmF1dGgwLmNvbSUyRmF2YXRhcnMlMkZqby5wbmciLCJ1c2VyX2lkIjoiYWR8TERBUHw0MDEzNjAyMSIsImlkZW50aXRpZXMiOlt7InVzZXJfaWQiOiJMREFQfDQwMTM2MDIxIiwicHJvdmlkZXIiOiJhZCIsImNvbm5lY3Rpb24iOiJMREFQIiwiaXNTb2NpYWwiOmZhbHNlfV0sImNyZWF0ZWRfYXQiOiIyMDE1LTA2LTMwVDE2OjE2OjIxLjQ5NloiLCJnbG9iYWxfY2xpZW50X2lkIjoiQWtLMVFiWkhVd0VDMjhTaVNNa1FIOGVoSkpScDNpNDciLCJpc3MiOiJodHRwczovL3RvcGNvZGVyLWRldi5hdXRoMC5jb20vIiwic3ViIjoiYWR8TERBUHw0MDEzNjAyMSIsImF1ZCI6IkpGRG83SE1rZjBxMkNrVkZIb2p5M3pIV2FmemlwcmhUIiwiZXhwIjoxNzk4ODE3MTI4LCJpYXQiOjE0Mzg4MTcxMjh9.yS7DBBTk9OFCtNIjsBz0yo9fljUbngtuTOsYeGfnjhs"
+        },
+        "access_token": {
+          "type": "string",
+          "sample": "XsNLiJrYFCOKArmj"
+        },
+        "token_type": {
+          "type": "string",
+          "sample": "bearer"
+        }
+      }
+    },
     "Token" : {
       "properties" : {
         "refresh_token": {
