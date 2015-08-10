@@ -1,0 +1,108 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "",
+    "version" : "",
+    "title" : ""
+  },
+  "host" : "api.topcoder-dev.com",
+  "basePath" : "/v3/work",
+  "schemes" : [ "https" ],
+  "produces" : [ "application/json" ],
+  "paths" : {
+    "" : {
+      "post" : {
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "type" : "object",
+              "items" : {
+                "$ref" : "#/definitions/Work"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/{id}" : {
+      "get" : {
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "type" : "object",
+              "items" : {
+                "$ref" : "#/definitions/Work"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Work" : {
+      "properties" : {
+        "id": {
+          "type": "string"
+        },
+        "result": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/WorkResult"
+          }
+        }
+      }
+    },
+    "WorkResult" : {
+      "properties" : {
+        "success": {
+          "type": "boolean",
+          "sample": true
+        },
+        "status": {
+          "type": "integer",
+          "sample": 200
+        },
+        "content": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/WorkContent"
+          }
+        }
+      }
+    },
+    "WorkContent" : {
+      "properties" : {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "Error" : {
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "message" : {
+          "type" : "string"
+        },
+        "fields" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
