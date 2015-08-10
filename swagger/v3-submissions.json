@@ -69,7 +69,7 @@
         }
       }
     },
-  "put" : {
+   "put" : {
     "responses" : {
       "200" : {
         "schema" : {
@@ -83,10 +83,10 @@
         "description" : "Unexpected error",
         "schema" : {
           "$ref" : "#/definitions/Error"
-        }
-      }
-    }
-  }
+         }
+       }
+     }
+   }
   }
   },
   "definitions" : {
