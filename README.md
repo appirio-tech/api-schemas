@@ -1,4 +1,5 @@
 # api schemas
+[![GitHub version](https://badge.fury.io/gh/appirio-tech%2Fapi-schemas.svg)](http://badge.fury.io/gh/appirio-tech%2Fapi-schemas)
 
 A central resource for JSON schemas used to mock our frontend apps.
 
