@@ -49,7 +49,45 @@
           }
         }
       }
-    }
+    },
+  "/{id}/submissions/final-fixes" : {
+    "get" : {
+      "responses" : {
+        "200" : {
+          "schema" : {
+            "type" : "object",
+            "items" : {
+              "$ref" : "#/definitions/FinalFixesWrapper"
+            }
+          }
+        },
+        "default" : {
+          "description" : "Unexpected error",
+          "schema" : {
+            "$ref" : "#/definitions/Error"
+          }
+        }
+      }
+    },
+   "put" : {
+    "responses" : {
+      "200" : {
+        "schema" : {
+          "type" : "object",
+          "items" : {
+            "$ref" : "#/definitions/FinalFixesPut"
+          }
+        }
+      },
+      "default" : {
+        "description" : "Unexpected error",
+        "schema" : {
+          "$ref" : "#/definitions/Error"
+         }
+       }
+     }
+   }
+  }
   },
   "definitions" : {
     "SubmissionsWrapper" : {
@@ -78,6 +116,19 @@
         }
       }
     },
+    "FinalFixesWrapper" : {
+      "properties" : {
+        "id": {
+          "type": "string"
+        },
+        "result": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/FinalFixesResult"
+          }
+        }
+      }
+    },
     "SubmissionsResult" : {
       "properties" : {
         "success": {
@@ -96,6 +147,52 @@
         }
       }
     },
+    "FinalFixesResult" : {
+      "properties" : {
+        "success": {
+          "type": "boolean",
+          "sample": true
+        },
+        "status": {
+          "type": "integer",
+          "sample": 200
+        },
+        "content": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/FinalFixesContent"
+          }
+        }
+      }
+    },
+    "FinalFixesPut" : {
+      "properties" : {
+        "id": {
+          "type": "string"
+        },
+        "result": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/FinalFixesPutResult"
+          }
+        }
+      }
+    },
+    "FinalFixesPutResult" : {
+      "properties" : {
+        "success": {
+          "type": "boolean",
+          "sample": true
+        },
+        "status": {
+          "type": "integer",
+          "sample": 200
+        },
+        "content": {
+          "type": "null"
+        }
+      }
+    },
     "SubmissionsDetailResult" : {
       "properties" : {
         "success": {
@@ -110,6 +207,38 @@
           "type": "object",
           "items": {
             "$ref": "#/definitions/Submission"
+          }
+        }
+      }
+    },
+    "FinalFixesContent" : {
+      "properties" : {
+        "id": {
+          "type": "string"
+        },
+        "phase": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/Phase"
+          }
+        },
+        "submitter": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/Submitter"
+          }
+        },
+        "confirmed": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "type": "string",
+          "sample": "2015-05-05T20:53:41.467Z"
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/File"
           }
         }
       }
@@ -196,6 +325,18 @@
         "url": {
           "type": "string",
           "sample": "https://i.kinja-img.com/gawker-media/image/upload/raoq6i3zhiq78kigjuam.jpg"
+        }
+      }
+    },
+    "Phase": {
+      "properties": {
+        "startDate": {
+          "type": "string",
+          "sample": "2015-05-05T20:53:41.467Z"
+        },
+        "endDate": {
+          "type": "string",
+          "sample": "2015-05-05T20:53:41.467Z"
         }
       }
     },
