@@ -5,7 +5,7 @@
     "version" : "",
     "title" : ""
   },
-  "host" : "api.topcoder-dev.com",
+  "host" : "api.topcoder.com",
   "basePath" : "/v3/messages",
   "schemes" : [ "https" ],
   "produces" : [ "application/json" ],

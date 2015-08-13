@@ -5,7 +5,7 @@
     "version" : "1.0.0",
     "title" : "Uber API"
   },
-  "host" : "api.topcoder-dev.com",
+  "host" : "api.topcoder.com",
   "basePath" : "/v2",
   "schemes" : [ "https" ],
   "produces" : [ "application/json" ],
