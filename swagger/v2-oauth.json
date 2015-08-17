@@ -1,6 +1,6 @@
 {
   "swagger" : "2.0",
-  "host" : "topcoder-dev.auth0.com",
+  "host" : "topcoder.auth0.com",
   "basePath" : "",
   "schemes" : [ "https" ],
   "produces" : [ "application/json" ],
