@@ -15,7 +15,10 @@
     "url": "https://github.com/appirio-tech/api-schemas/issues"
   },
   "homepage": "https://github.com/appirio-tech/api-schemas",
-  "dependencies": {
-    "api-blueprint-to-json": "0.0.0"
+  "devDependencies": {
+    "api-blueprint-to-json": "0.0.0",
+    "appirio-work-styles": "0.x.x",
+    "appirio-gulp-tasks": "3.x.x",
+    "gulp": "^3.8.11"
   }
 }

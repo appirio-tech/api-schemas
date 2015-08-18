@@ -1,10 +1,24 @@
 {
-  "name": "api-schemas",
-  "version": "2.1.0",
-  "homepage": "https://github.com/appirio-tech/api-schemas",
-  "description": "API Schemas",
-  "main": "v3.json",
-  "moduleType": [
-    "globals"
+  "name": "appirio-tech-ng-api",
+  "version": "0.0.2",
+  "description": "API",
+  "main": "./dist/main.js",
+  "authors": [
+    ""
+  ],
+  "license": "",
+  "devDependencies": {
+    "angular-mocks": "1.4.x",
+    "sinon": "http://sinonjs.org/releases/sinon-1.12.1.js",
+    "auto-config-fake-server": "2.x.x"
+  },
+  "dependencies": {
+    "angular": "1.4.x",
+    "angular-resource": "1.4.x",
+    "angular-ui-router": "0.2.x"
+  },
+  "ignore": [
+    "**/*",
+    "!dist/**/*"
   ]
 }

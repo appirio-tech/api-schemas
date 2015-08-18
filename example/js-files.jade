@@ -1,0 +1,44 @@
+- var scripts  = []
+- var examples = []
+
+- examples.push('constants')
+- examples.push('example.module')
+- examples.push('example-templates')
+- examples.push('routes')
+- examples.push('user-v3.controller')
+- examples.push('authorizations.controller')
+
+- var bowers   = []
+
+- scripts.push('ng-api.module')
+- scripts.push('user-v3-api.service')
+- scripts.push('authorizations-api.service')
+
+- bowers.push('angular/angular')
+- bowers.push('angular-resource/angular-resource')
+- bowers.push('angular-ui-router/release/angular-ui-router')
+
+= "\n"
+// build:js lib.js
+= "\n"
+each path in bowers
+  script(src="bower_components/#{path}.js", type="text/javascript")
+  = "\n"
+// endbuild
+= "\n"
+
+// build:js main.js
+= "\n"
+each path in scripts
+  script(src="scripts/#{path}.js", type="text/javascript")
+  = "\n"
+// endbuild
+= "\n"
+
+// build:js example.js
+= "\n"
+each path in examples
+  script(src="scripts/#{path}.js", type="text/javascript")
+  = "\n"
+// endbuild
+= "\n"
