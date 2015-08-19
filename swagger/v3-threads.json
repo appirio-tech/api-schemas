@@ -178,6 +178,12 @@
         "status": {
           "type": "integer",
           "sample": 200
+        },
+        "content": {
+          "type": "object",
+          "items": {
+            "$ref": "#/definitions/ThreadContent"
+          }
         }
       }
     },
