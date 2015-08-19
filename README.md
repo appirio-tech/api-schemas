@@ -1,7 +1,10 @@
 # api schemas
 [![GitHub version](https://badge.fury.io/gh/appirio-tech%2Fapi-schemas.svg)](http://badge.fury.io/gh/appirio-tech%2Fapi-schemas)
+
 [![Build Status](https://travis-ci.org/appirio-tech/api-schemas.svg?branch=master)](https://travis-ci.org/appirio-tech/api-schemas)
+
 [![Coverage Status](https://coveralls.io/repos/appirio-tech/api-schemas/badge.svg?branch=DEM-1052&service=github)](https://coveralls.io/github/appirio-tech/api-schemas?branch=DEM-1052)
+
 [![Dependency Status](https://www.versioneye.com/user/projects/55d4b5156dbe17001b000001/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55d4b5156dbe17001b000001)
 
 A central resource for JSON schemas used to mock our frontend apps.
