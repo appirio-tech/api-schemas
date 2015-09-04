@@ -1,0 +1,29 @@
+{
+  "name": "auto-config-fake-server",
+  "version": "1.0.0",
+  "homepage": "https://github.com/appirio-tech/auto-config-fake-server",
+  "dependencies": {
+    "sinon": "http://sinonjs.org/releases/sinon-1.14.0.js"
+  },
+  "exportsOverride": {
+    "sinon": {
+      "js": "index.js"
+    }
+  },
+  "description": "Create a Sinon fake server with a Swagger JSON file.",
+  "main": "dist/auto-config-fake-server.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "fake",
+    "server",
+    "sinon",
+    "swagger"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/*",
+    "!dist/**/*"
+  ]
+}

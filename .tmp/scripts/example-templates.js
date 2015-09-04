@@ -1,0 +1,1 @@
+angular.module("example").run(["$templateCache", function($templateCache) {$templateCache.put("views/api.html","<label>GET</label><p>{{ vm.get }}</p>");}]);
