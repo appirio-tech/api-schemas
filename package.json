@@ -1,6 +1,7 @@
 {
   "name": "appirio-tech-api-schemas",
   "version": "5.0.58",
+  "main": "./main.coffee",
   "description": "Mock data for topcoder apis",
   "scripts": {
     "start": "node update.js",
@@ -13,8 +14,13 @@
   "bugs": {
     "url": "https://github.com/appirio-tech/api-schemas/issues"
   },
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
   "homepage": "https://github.com/appirio-tech/api-schemas",
   "dependencies": {
+  },
+  "devDependencies": {
     "api-blueprint-to-json": "0.0.0"
   }
 }
