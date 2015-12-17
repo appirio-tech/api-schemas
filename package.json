@@ -1,8 +1,7 @@
 {
-  "name": "api-schemas",
-  "version": "2.1.0",
+  "name": "appirio-tech-api-schemas",
+  "version": "5.0.58",
   "description": "Mock data for topcoder apis",
-  "main": "update.js",
   "scripts": {
     "start": "node update.js",
     "test": "echo \"Error: no test specified\" && exit 1"
