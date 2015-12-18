@@ -1,5 +1,3 @@
-window.sinon = require 'sinon'
-
 require 'auto-config-fake-server'
 
 swaggerFiles = require.context './swagger/', true, /^(.*\.(json$))[^.]*$/igm
