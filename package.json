@@ -1,6 +1,5 @@
 {
   "name": "appirio-tech-api-schemas",
-  "version": "5.0.63",
   "main": "./main.coffee",
   "description": "Mock data for topcoder apis",
   "scripts": {
@@ -22,6 +21,7 @@
     "auto-config-fake-server": "2.x.x"
   },
   "devDependencies": {
-    "api-blueprint-to-json": "0.0.0"
+    "api-blueprint-to-json": "0.0.0",
+    "npm-prepublish": "^1.2.1"
   }
 }
