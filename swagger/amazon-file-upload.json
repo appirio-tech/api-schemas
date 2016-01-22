@@ -1,0 +1,23 @@
+{
+  "swagger" : "2.0",
+  "host" : "topcoder-dev-media.s3.amazonaws.com",
+  "basePath" : "",
+  "schemes" : [ "https" ],
+  "produces" : [ "application/json" ],
+  "paths" : {
+    "/app-project/localdev/{id}/{category}/{filename}": {
+      "PUT" : {
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "type" : "object",
+              "items" : {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+  }
+}
